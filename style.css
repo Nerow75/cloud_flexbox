@@ -1,0 +1,394 @@
+/* ------------------------------------ */
+/* 🌐 Feuille de style de l'atelier CSS : Choisir entre Grid ou Flexbox */
+/* ------------------------------------ */
+
+/* Importation de la police d'écriture */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #f8fafc;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* Styles communs aux blocs de l'exercice */
+section {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 47.8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+section > h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 24px;
+}
+
+/* Paragraphe de justification exigé sous chaque bloc */
+.justification {
+  margin-top: 24px;
+  padding: 14px 16px;
+  background-color: #e0ecff;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: #1e3a8a;
+}
+
+/* Blocs bleus remplaçant les images */
+.blue-box {
+  background-color: #1d63dc;
+  color: #ffffff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Composants réutilisables (boutons, badges, métadonnées) */
+.btn-primary {
+  background-color: #1d63dc;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: inline-block;
+  text-align: center;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.tag {
+  background-color: #e0ecff;
+  color: #1d63dc;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.duration {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+/* ------------------------------------ */
+/* 1. NAVIGATION PRINCIPALE (FLEXBOX)   */
+/* ------------------------------------ */
+.navbar {
+  display: flex; /* Alignement horizontal 1D */
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.logo {
+  background-color: #1d63dc;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 6px 20px;
+  border-radius: 4px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.nav-links a.active {
+  color: #1d63dc;
+  font-weight: 600;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.btn-link {
+  text-decoration: none;
+  color: #1d63dc;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.burger-menu {
+  display: none; /* Masqué sur desktop */
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #0f172a;
+}
+
+/* ------------------------------------ */
+/* 2. NOS FORMATIONS POPULAIRES (GRID + FLEX) */
+/* ------------------------------------ */
+.formations-grid {
+  display: grid; /* Grille 2D de 3 colonnes égales */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.formation-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 16px;
+  display: flex; /* Flexbox vertical à l'intérieur de la carte */
+  flex-direction: column;
+}
+
+.formation-img {
+  height: 180px;
+  font-size: 1.75rem;
+  margin-bottom: 16px;
+}
+
+.formation-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.formation-body h3 {
+  font-size: 1.1rem;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.formation-body p {
+  font-size: 0.875rem;
+  margin-bottom: 24px;
+}
+
+.formation-footer {
+  margin-top: auto; /* Aligne le bas de carte quelle que soit la hauteur du texte */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+/* ------------------------------------ */
+/* 3. ARTICLE À LA UNE (FLEXBOX)        */
+/* ------------------------------------ */
+.featured-article {
+  display: flex; /* 2 blocs alignés sur un seul axe horizontal */
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.article-img {
+  width: 35%;
+  min-height: 250px;
+  border-radius: 0;
+  font-size: 1.15rem;
+  padding: 16px;
+}
+
+.article-content {
+  width: 65%;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.article-content h3 {
+  font-size: 1.25rem;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.article-content p {
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  background-color: #1d63dc;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.author div {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+}
+
+.author strong {
+  color: #0f172a;
+}
+
+/* ------------------------------------ */
+/* 4. TECHNOLOGIES MAÎTRISÉES (FLEXBOX) */
+/* ------------------------------------ */
+.tech-list {
+  list-style: none;
+  display: flex; /* Badges centrés s'adaptant à la largeur de leur texte */
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.tech-list li {
+  background-color: #f1f5f9;
+  color: #334155;
+  padding: 8px 18px;
+  border-radius: 9999px; /* Effet pilule bien arrondi */
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* ------------------------------------ */
+/* 5. NOS PROJETS RÉALISÉS (CSS GRID)   */
+/* ------------------------------------ */
+.projects-grid {
+  display: grid; /* Grille 2D asymétrique : 3 colonnes, 2 lignes */
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 210px;
+  gap: 20px;
+}
+
+.project-item {
+  font-size: 1.25rem;
+  padding: 16px;
+  border-radius: 0; /* Angles droits (annule le border-radius de .blue-box) */
+}
+
+/* Le dernier élément fusionne 2 colonnes */
+.project-wide {
+  grid-column: span 2;
+  font-size: 1.75rem;
+}
+
+/* ------------------------------------ */
+/* BONUS : ADAPTATION MOBILE (DESKTOP FIRST) */
+/* ------------------------------------ */
+@media (max-width: 768px) {
+  section {
+    padding: 20px;
+  }
+
+  /* 1. Navigation mobile */
+  .nav-links,
+  .nav-actions {
+    display: none;
+  }
+
+  .navbar {
+    position: relative;
+    justify-content: center;
+  }
+
+  .burger-menu {
+    display: block;
+    position: absolute;
+    right: 20px;
+  }
+
+  /* 2. Formations mobile */
+  .formations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .formation-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .formation-footer .btn-primary {
+    width: 100%;
+  }
+
+  /* 3. Article à la une mobile */
+  .featured-article {
+    flex-direction: column;
+  }
+
+  .article-img,
+  .article-content {
+    width: 100%;
+  }
+
+  /* 4. Technologies mobile */
+  .tech-list {
+    justify-content: flex-start;
+  }
+
+  .tech-list li:nth-child(n + 6) {
+    display: none;
+  }
+
+  /* 5. Projets mobile */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 150px;
+  }
+
+  .project-wide {
+    grid-column: span 1;
+    font-size: 1.25rem;
+  }
+}

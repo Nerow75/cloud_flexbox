@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atelier Grid vs Flexbox</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <!-- Section 1 : Navigation principale (Flexbox) -->
+      <section class="section-navbar">
+        <h2>Navigation principale</h2>
+
+        <header class="navbar">
+          <div class="nav-left">
+            <a href="#" class="logo">TechPro</a>
+
+            <nav class="nav-links">
+              <a href="#" class="active">Accueil</a>
+              <a href="#">Produits</a>
+              <a href="#">Services</a>
+              <a href="#">Contact</a>
+            </nav>
+          </div>
+
+          <div class="nav-actions">
+            <a href="#" class="btn-link">Se connecter</a>
+            <a href="#" class="btn-primary">S'inscrire</a>
+          </div>
+
+          <button class="burger-menu" aria-label="Menu">☰</button>
+        </header>
+
+        <p class="justification">
+          Justification : Flexbox car 1 ligne et ce sera plus pratique pour
+          passer sur le mobile prévu.
+        </p>
+      </section>
+
+      <!-- Section 2 : Nos formations populaires (Grid + Flexbox) -->
+      <section class="section-formations">
+        <h2>Nos formations populaires</h2>
+
+        <div class="formations-grid">
+          <!-- Carte 1 -->
+          <article class="formation-card">
+            <div class="blue-box formation-img">JavaScript</div>
+            <div class="formation-body">
+              <div class="meta">
+                <span class="tag">Développement</span>
+                <span class="duration">12h de cours</span>
+              </div>
+              <h3>JavaScript Moderne</h3>
+              <p>Maîtrisez ES6+, async/await et les frameworks modernes</p>
+              <div class="formation-footer">
+                <span class="price">299 €</span>
+                <a href="#" class="btn-primary">S'inscrire</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Carte 2 -->
+          <article class="formation-card">
+            <div class="blue-box formation-img">React</div>
+            <div class="formation-body">
+              <div class="meta">
+                <span class="tag">Framework</span>
+                <span class="duration">15h de cours</span>
+              </div>
+              <h3>React Avancé</h3>
+              <p>Créez des applications web performantes avec React</p>
+              <div class="formation-footer">
+                <span class="price">399 €</span>
+                <a href="#" class="btn-primary">S'inscrire</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Carte 3 -->
+          <article class="formation-card">
+            <div class="blue-box formation-img">Node.js</div>
+            <div class="formation-body">
+              <div class="meta">
+                <span class="tag">Backend</span>
+                <span class="duration">18h de cours</span>
+              </div>
+              <h3>Node.js & Express</h3>
+              <p>Développez des API REST et applications serveur</p>
+              <div class="formation-footer">
+                <span class="price">449 €</span>
+                <a href="#" class="btn-primary">S'inscrire</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p class="justification">
+          Justification : Grid pour aligner les 3 colonnes sur desktop et
+          basculer sur 1 colonne en mobile, puis à l’intérieur de la card on met
+          du flex pour faire chaque partie verticalement.
+        </p>
+      </section>
+
+      <!-- Section 3 : Article à la une (Flexbox) -->
+      <section class="section-article">
+        <h2>Article à la une</h2>
+
+        <article class="featured-article">
+          <div class="blue-box article-img">Intelligence Artificielle</div>
+          <div class="article-content">
+            <div class="meta">
+              <span class="tag">Technologies</span>
+              <span class="duration">10 min de lecture</span>
+            </div>
+            <h3>L'Impact de l'IA sur le Développement Web en 2024</h3>
+            <p>
+              L'intelligence artificielle révolutionne la façon dont nous
+              concevons et développons des applications web. Découvrez les
+              dernières innovations et leur impact sur l'industrie du
+              développement...
+            </p>
+            <div class="author">
+              <span class="avatar">ML</span>
+              <div>
+                <strong>Marie Laurent</strong>
+                <span>Lead Developer @ TechPro</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <p class="justification">
+          Justification : Une seule dimension, image puis contenu en flex, puis
+          l’affichage du contenu aussi en flex, ça facilite aussi le passage sur
+          mobile.
+        </p>
+      </section>
+
+      <!-- Section 4 : Technologies maîtrisées (Flexbox) -->
+      <section class="section-technologies">
+        <h2>Technologies maîtrisées</h2>
+
+        <ul class="tech-list">
+          <li>React.js</li>
+          <li>Vue.js</li>
+          <li>Node.js</li>
+          <li>TypeScript</li>
+          <li>Python</li>
+          <li>Docker</li>
+          <li>AWS</li>
+        </ul>
+
+        <p class="justification">
+          Justification : Flex pour que les éléments gardent bien leur largeur,
+          comme sur mobile aussi, le wrap permet de faire un retour à la ligne
+          propre.
+        </p>
+      </section>
+
+      <!-- Section 5 : Nos projets réalisés (CSS Grid) -->
+      <section class="section-projets">
+        <h2>Nos projets réalisés</h2>
+
+        <div class="projects-grid">
+          <div class="blue-box project-item">Inspiration Visuelle</div>
+          <div class="blue-box project-item">Grille Créative</div>
+          <div class="blue-box project-item">Moodboard Produits</div>
+          <div class="blue-box project-item">Univers en images</div>
+          <div class="blue-box project-item project-wide">
+            Collection en un coup d'œil
+          </div>
+        </div>
+
+        <p class="justification">
+          Justification : Grid car rien que le « Collection en un coup d’œil »
+          nous fait dire grid car il s’étale sur 2 colonnes, et pareil sur
+          mobile ça passe en une seule colonne.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
